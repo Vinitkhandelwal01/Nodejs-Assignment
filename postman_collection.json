@@ -1,57 +1,86 @@
 {
-  "info": {
-    "name": "School Management APIs",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Health",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{baseUrl}}/health",
-          "host": ["{{baseUrl}}"],
-          "path": ["health"]
-        }
-      }
-    },
-    {   
-      "name": "Add School",
-      "request": {
-        "method": "POST",
-        "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Sample High School\",\n  \"address\": \"123 Main St\",\n  \"latitude\": 12.9716,\n  \"longitude\": 77.5946\n}"
-        },
-        "url": {
-          "raw": "{{baseUrl}}/addSchool",
-          "host": ["{{baseUrl}}"],
-          "path": ["addSchool"]
-        }
-      }
-    },
-    {
-      "name": "List Schools",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{baseUrl}}/listSchools?latitude=12.9716&longitude=77.5946",
-          "host": ["{{baseUrl}}"],
-          "path": ["listSchools"],
-          "query": [
-            {"key": "latitude", "value": "12.9716"},
-            {"key": "longitude", "value": "77.5946"}
-          ]
-        }
-      }
-    }
-  ],
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:3000"
-    }
-  ]
+	"info": {
+		"_postman_id": "013797bb-cbcf-4425-8d35-509150b07b48",
+		"name": "School",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42852381"
+	},
+	"item": [
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSchool",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Laxmangarh Public School\",\r\n  \"address\": \"123 Main Street\",\r\n  \"latitude\": 28.6139,\r\n  \"longitude\": 77.2090\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addSchool",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addSchool"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listSchool",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/listSchools?lat=28.6139&lng=77.2090",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"listSchools"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "28.6139"
+						},
+						{
+							"key": "lng",
+							"value": "77.2090"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
-
